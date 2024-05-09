@@ -150,7 +150,10 @@ class Empresa(Conta):
 
     def pedir_emprestimo(self, valor):
 
-        if self.emprestimoEmpresa > 0:
+        if valor > self.emprestimoEmpresa:
+            print("Insuficiente!")
+
+        elif self.emprestimoEmpresa > 0:
             if self.emprestimoEmpresa >= valor:
                 self.emprestimoEmpresa -= valor
                 self.saldo += valor
@@ -175,7 +178,10 @@ class Estudantil(Conta):
 
     def usarEstudantil(self, valor):
 
-        if self.limiteEstudantil > 0:
+        if valor > self.limiteEstudantil:
+            print("Limite insuficiente")
+
+        elif self.limiteEstudantil > 0:
             if self.limiteEstudantil >= valor:
                 self.limiteEstudantil -= valor
                 self.saldo += valor

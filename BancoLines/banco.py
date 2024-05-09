@@ -12,7 +12,7 @@ def main():
     em = Empresa(12938, 47903098377, 0.0)
     estu = Estudantil(91474, 47903098377, 0.0)
 
-    num_mov = 3
+    num_mov = 10
 
     while True:
         f.cabecalho()
@@ -41,15 +41,19 @@ def main():
 
                     time.sleep(1)
                     pop.debito(valor)
+
+                elif opcao == 3:
+                    break
                     
 
             dia = int(input("Qual o dia de hoje? "))
             pop.correcao(dia)
+            time.sleep(2)
 
-            if i+1 == num_mov:
-                    f.cabecalho_conta(tipo_conta, i+1)
-                    em.extrato()
-                    time.sleep(3)
+            
+            f.cabecalho_conta(tipo_conta, i+1)
+            pop.extrato()
+            time.sleep(3)
 
         elif opcao == 2:
             tipo_conta = 'CORRENTE'
@@ -79,6 +83,9 @@ def main():
                     f.cabecalho_conta(tipo_conta, i+1)
                     cor.extrato()
                     time.sleep(1)
+
+                elif opcao == 3:
+                    break
                     
 
             pedido_talao = input("Gostaria de pegar um talão de cheque? S/N\n").upper()
@@ -90,7 +97,7 @@ def main():
 
             elif i+1 == num_mov:
                     f.cabecalho_conta(tipo_conta, i+1)
-                    esp.extrato()
+                    cor.extrato()
                     time.sleep(3)
                 
             
@@ -120,6 +127,9 @@ def main():
                     else:
                         time.sleep(1)
                         esp.debito(valor)
+
+                elif opcao == 3:
+                    break
 
             if i+1 == num_mov:
                     f.cabecalho_conta(tipo_conta, i+1)
@@ -169,6 +179,9 @@ def main():
                     
                     elif em.saldo >= valor:
                         em.debito(valor)
+
+                elif opcao == 3:
+                    break
 
                 else:
                     print("Opção inválida")
@@ -222,6 +235,9 @@ def main():
                     
                     elif em.saldo >= valor:
                         estu.debito(valor)
+                
+                elif opcao == 3:
+                    break
 
                 else:
                     print("Opção inválida")

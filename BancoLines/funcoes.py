@@ -83,6 +83,7 @@ def opcao_movimento():
     print("""
 1- CRÉDITO
 2- DÉBITO
+3- SAIR
 """)
     opcao_movimento = int(input("Informe a opcão desejada: "))
 
